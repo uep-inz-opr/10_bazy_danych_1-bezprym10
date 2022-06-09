@@ -10,8 +10,9 @@ if __name__ == "__main__":
                     datetime data_type timestamp, 
                     duration data_type INTEGER , 
                     celltower data_type INTEGER);''')
-
-    with open(r'data\ polaczenia_duze.csv', encoding='UTF-8') as fin:
+    file = input()
+    
+    with open(file,'r', encoding='UTF-8') as fin:
         reader = csv.reader(fin, delimiter = ";")
         header = next(reader, None)
         rows = list(reader)
@@ -19,3 +20,4 @@ if __name__ == "__main__":
         sql_con.commit()
         result = cursor.execute("Select sum(duration) from polaczenia").fetchone()[0]
         print(int(result))
+
