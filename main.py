@@ -11,7 +11,7 @@ if __name__ == "__main__":
                     duration data_type INTEGER , 
                     celltower data_type INTEGER);''')
 
-    with open(r'data\polaczenia_duze.csv', encoding='UTF-8') as fin:
+    with open(r'data\ polaczenia_duze.csv', encoding='UTF-8') as fin:
         reader = csv.reader(fin, delimiter = ";")
         header = next(reader, None)
         rows = list(reader)
